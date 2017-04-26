@@ -1,5 +1,6 @@
 body {
-  font-family: "Proxima Nova", Helvetica, sans-serif;
+  /*font-family: "Proxima Nova", Helvetica, sans-serif;*/
+  font-family: 'Open Sans', sans-serif;
   font-weight: bold;
 	min-height: 100vh;
 	background: linear-gradient(#26a3d9, #19173C);
@@ -7,7 +8,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	/*justify-content: center;*/
-	align-items: center;
+	/*align-items: center;*/
   color: white;
 }
 
@@ -71,6 +72,7 @@ p#date {
   width: 65px;
   color: white;
   background-color: #00baf2;
+  font-size: large;
 }
 
 #locationBox {
@@ -154,7 +156,7 @@ p#wind {
 
 #weatherBox{
   /*padding: 20px;*/
-  width: 1050px;
+  /*width: 1050px;*/
   display: flex;
   flex-direction: column;
   /*background-color: #6666ee;*/
