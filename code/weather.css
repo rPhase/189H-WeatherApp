@@ -72,7 +72,7 @@ p#date {
   width: 65px;
   color: white;
   background-color: #00baf2;
-  font-size: large;
+  font-size: 14px;
 }
 
 #locationBox {
@@ -114,7 +114,7 @@ p#temp span {
   vertical-align: text-top;
   position: relative;
   /*top: -0.4px;*/
-  line-height: 1.8;
+  line-height: 2.5;
   left: 15px;
 }
 
