@@ -1,14 +1,12 @@
 body {
   /*font-family: "Proxima Nova", Helvetica, sans-serif;*/
   font-family: 'Open Sans', sans-serif;
-  font-weight: bold;
+  font-weight: normal;
 	min-height: 100vh;
 	background: linear-gradient(#26a3d9, #19173C);
 	/* flexbox */
 	display: flex;
 	flex-direction: column;
-	/*justify-content: center;*/
-	/*align-items: center;*/
   color: white;
 }
 
@@ -19,9 +17,7 @@ main {
 	flex-direction: column;
   /*adjust spacing between main blocks*/
 	justify-content:flex-start;
-	/*align-items: center;*/
-	/*flex-grow: 1;*/
-	/*align-self: stretch;*/
+	flex-grow: 1;
 }
 
 #topBox {
@@ -86,41 +82,49 @@ p#location {
 }
 
 #midBox {
-  padding: 20px;
   display: flex;
-  justify-content: space-between;
-}
-
-#left .icon {
-  width: 225px;
-}
-
-#mid {
-  /*width: 225px;*/
-  display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
 }
 
+#left{
+  display: flex;
+  position: relative;
+  left:60px;
+}
+
+#left .icon {
+  height: 200px;
+
+}
+
+#mid {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
 p#temp{
-  /*padding-right: 60px;*/
   font-size: 750%;
   font-weight: 100;
-  padding-left: 30px;
+  position: relative;
+  bottom: 8px;
 }
 
 p#temp span {
   font-size: 35px;
   vertical-align: text-top;
   position: relative;
-  /*top: -0.4px;*/
-  line-height: 2.5;
+  line-height: 3;
   left: 15px;
+  font-weight: bolder;
 }
 
 p#condition{
   margin-top: 15px;
   font-size: xx-large;
+  position: relative;
+  right: 15px;
 }
 
 #right {
@@ -155,25 +159,19 @@ p#wind {
 }
 
 #weatherBox{
-  /*padding: 20px;*/
-  /*width: 1050px;*/
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
-  /*background-color: #6666ee;*/
   overflow: hidden;
   align-self: stretch;
-  /*justify-content: space-between;*/
 }
 
 .stepper {
-	/*height: 200px;*/
-	/*width: 150px;*/
-	/*background-color: #008888;*/
 
 	/* spacing inside slider controlled by Javascript */
 	position: relative;
 
-  /*left: 100px;*/
+  left: 0px;
 	/* animate transition when left changes */
 	transition-property: left;
 	transition-duration: 1s;
@@ -181,19 +179,11 @@ p#wind {
 
 	/* flexbox for contents */
 	display: flex;
-	/*flex-shrink: 0;*/
-  /*justify-content: space-between;*/
-  /*align-self: stretch;*/
-  /*flex-grow: */
-}
 
-/*#two{
-  left: 20px;
-}*/
+}
 
 /*The individual forecast boxes*/
 .forecast {
-	/*margin: 10px;*/
   width: 200px;
   min-width: 200px;
   height: 280px;
@@ -209,26 +199,27 @@ p#wind {
 }
 
 .forecast .day{
-  font-size: 250%;
+  font-size: 225%;
   font-weight: 100;
 }
 
 .forecast .icon{
-  width: 110px;
+  height: 100px;
 }
 
 .forecast .condition{
-  font-size: 180%;
+  font-size: 160%;
   font-weight: 100;
+  text-align: center;
 }
 
 .forecast .temp{
   display: flex;
-  /*padding-left: 30px;*/
-  /*padding-right: 30px;*/
+  padding-left: 10px;
+  padding-right: 10px;
   align-self: stretch;
   justify-content: space-around;
-  font-size: 280%;
+  font-size: 260%;
 }
 
 .temp .low {
@@ -240,8 +231,6 @@ div#buttonBar{
   justify-content: space-between;
   margin-top: 10px;
   padding: 10px;
-  /*background-color: red;*/
-  /*height: 20px;*/
 }
 
 .slideButton{
@@ -252,16 +241,66 @@ div#buttonBar{
   border-radius: 25px;
   border: 0px;
   font-size: x-large;
+  font-weight: lighter;
 }
 
 .arrowIcon{
   width: 50px;
 }
 
-#leftButton{
-  /*display: none;*/
+#plusButton{
+  display: none;
 }
 
-#rightButton{
-  /*display: none;*/
+#yahoo{
+  text-align: center;
+}
+
+@media (max-width: 1000px) {
+  #leftButton, #rightButton, #midBox, #date, #zipButton, .forecast{
+    display:none;
+  }
+
+  #plusButton{
+    display: block;
+  }
+
+  #topBox{
+    flex-direction: column-reverse;
+  }
+
+  #time{
+    font-size: 350% !important;
+  }
+
+  #locationBox{
+    display: block;
+    margin-left: 20px;
+  }
+
+  #searchBox{
+    flex-direction: row;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+  main{
+    padding: 0px;
+    padding-top: 20px;
+  }
+
+  .stepper{
+    display: flex;
+    justify-content: center;
+  }
+
+  #one{
+    display: flex;
+    object-fit: fill;
+    position: relative;
+  }
 }
